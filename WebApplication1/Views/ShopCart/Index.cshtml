@@ -1,0 +1,15 @@
+﻿@model ShopCartViewModel
+<div class="container">
+	@{
+		foreach (var elem in Model.shopCart.ListShopItems)
+		{
+			<div class="alert alert-primary">
+				<b>Automobile: </b> @elem.Car.Name <br/>
+				<b>Price: </b> @elem.Car.Price.ToString("c")
+			</div>
+		}
+	}
+	<hr/>
+
+	<a class="btn btn-danger" asp-controller="Order" asp-action="Checkout">Order</a>
+</div>
